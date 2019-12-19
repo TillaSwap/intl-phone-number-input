@@ -388,7 +388,11 @@ class _Item extends StatelessWidget {
           SizedBox(width: 12.0),
           Text(
             country?.dialCode ?? '',
+          ),
+          Text(
+            country?.name ?? '',
           )
+
         ],
       ),
     );
