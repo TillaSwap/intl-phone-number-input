@@ -293,20 +293,18 @@ class _InputWidgetState extends State<_InputWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          DropdownButtonHideUnderline(
-            child: DropdownButton<Country>(
-              hint: _Item(
-                country: provider.country,
-              ),
-              value: provider.country,
-              items: _mapCountryToDropdownItem(provider.countries),
-              onChanged: widget.isEnabled
-                  ? (value) {
-                      provider.country = value;
-                      _phoneNumberControllerListener();
-                    }
-                  : null,
+          DropdownButton<Country>(
+            hint: _Item(
+              country: provider.country,
             ),
+            value: provider.country,
+            items: _mapCountryToDropdownItem(provider.countries),
+            onChanged: widget.isEnabled
+                ? (value) {
+                    provider.country = value;
+                    _phoneNumberControllerListener();
+                  }
+                : null,
           ),
           Flexible(
             child: TextFormField(
@@ -390,7 +388,7 @@ class _Item extends StatelessWidget {
             country?.dialCode ?? '',
           ),
           Text(
-            country?.name ?? '',
+            "  " + country?.name ?? '',
           )
 
         ],
